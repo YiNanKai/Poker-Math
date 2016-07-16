@@ -7,71 +7,35 @@
     <link rel="stylesheet" href="./css/dn.css">
     <script type="text/javascript" src="./js/libs.min.js"></script>
     <script type="text/javascript" src="js/helper.js"></script>
-    <script type="text/javascript"src="./js/main.js"></script>
-    <script type="text/javascript"src="js/render.js"></script>
-
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="js/render.js"></script>
+    <script type="text/javascript">
+        function myFun(){
+    $("#start").show();
+    $("start").on("click", function(){
+        $("#start").hide();
+        $(".cardsWrap").show();
+         cards();//调用生成卡牌
+        putCard();
+        sys_putCard();
+    })
+    
+    $("#dnIndexPage").show();
+    $("#qh_join_game").hide();
+    $("#player1 .nickName").html("王文涵");
+    $("#player1 .score").html(50000);
+}
+    </script>
 
 </head>
-<body>
+<body onload="myFun()">
 <div class="jb"></div>
 <!--登陆和注册页面-->
-<div id="qh_login_reg"class="page">
-    <!--登陆界面-->
-    <div id="qh_product_l">
-        <nav>
-            <div class="qhIcon">
-                <img src="images/nn_icon.png" alt="">
-            </div>
-            <span class="game_name">
-                斗牛
-                <div class="productCenter"></div>
-                <span style="font-size: 20px;">(HTML5版)</span>
-            </span>
-            <hr>
-            <span class="MPADesc" >Powered by Mobile Poker Association 2013</span>
-        </nav>
-        <div class="_h">
-            <p><input type="text" id="l_username" value="请输入用户名" class="qhInput" style="color: gray"></p>
-            <p><input type="text" id="l_userpwd" value="请输入密码" class="qhInput" style="color: gray"></p>
-
-            <p style="margin-top: 50px;"><button class="lr_button btns" id="l_login">登&nbsp;&nbsp;陆</button></p>
-        </div>
-        <div id="user_login">
-            <div class="button_btn" id="randUser">游客登录</div>
-            <div class="button_btn" id="l_register">快速注册</div>
-        </div>
-    </div>
-    <!--注册界面-->
-    <div id="qh_product_r">
-
-        <nav>
-            <div class="qhIcon">
-                <img src="images/nn_icon.png" alt="">
-            </div>
-            <span class="game_name">
-                斗牛
-                <div class="productCenter"></div>
-                <span style="font-size: 20px;">(HTML5版)</span>
-            </span>
-            <hr>
-            <span class="MPADesc" >Powered by Mobile Poker Association 2013</span>
-        </nav>
-        <div class="_h">
-            <p><input type="text" id="r_username" value="请输入用户名" class="qhInput" style="color: gray"></p>
-            <p><input type="text" id="r_userpwd" value="请输入密码" class="qhInput" style="color: gray"></p>
-            <p><input type="text" id="res_userpwd" value="请确认密码" class="qhInput" style="color: gray"></p>
-            <p style="margin-top: 50px;"><button class="lr_button btns" id="r_login">注&nbsp;&nbsp;册</button></p>
-        </div>
-        <div id="res_login">
-            <p style="margin-top: 50px;"><button class="lr_button btns" id="return_login">返回登陆</button></p>
-        </div>
-    </div>
-    <div class="lr_btn">
-        <div id="pc_ddress"></div>
-        <div id="copyright">详情请登陆：http://434770438.com &nbsp;&nbsp;  客服热线：13510505378</div>
-    </div>
-
-</div>
+<script>
+    $("#qh_login_reg").hide();
+    $("#qh_join_reg").hide();
+    $("#dnIndexPage").show();
+</script>
 <!--大厅界面-->
 <div id="qh_join_game"class="page">
     <div id="qh_header">
